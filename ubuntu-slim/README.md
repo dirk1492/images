@@ -1,6 +1,8 @@
 
 Small Ubuntu 15.10 docker image
 
+This is a arm64 port of the gcr.io/google_containers/ubuntu-slim image.
+
 The size of this image is less than 56MB (more than half of ubuntu:15.10). 
 This is possible by the removal of packages that are not required in a container:
 - dmsetup
