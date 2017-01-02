@@ -13,13 +13,11 @@
 # limitations under the License.
 
 
-FROM dil001/ubuntu-slim-arm64:0.1
-#MAINTAINER Prashanth B <beeps@google.com>
+FROM dil001/ubuntu-slim-arm64:0.3
+MAINTAINER Prashanth B <beeps@google.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
   bash curl socat haproxy ca-certificates liblua5.3-0 && \
-  curl -o /tmp/haproxy.deb http://mirrors.kernel.org/ubuntu/pool/main/h/haproxy/haproxy_1.6.3-1_amd64.deb && \
-  dpkg -i /tmp/haproxy.deb && \
   apt-get clean -y && \
   rm -rf /var/lib/apt/lists/* /tmp/*
 

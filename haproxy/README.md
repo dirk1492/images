@@ -1,5 +1,6 @@
-
 This is a arm64 port of the gcr.io/google_containers/haproxy image.
+
+HAProxy 1.6 base image using ubuntu-slim
 
 What is HAProxy?
 HAProxy is a free, very fast and reliable solution offering high availability, load balancing, and proxying for TCP and HTTP-based applications.
@@ -9,7 +10,7 @@ This image does provides a default configuration file with no backend servers.
 
 *Using docker*
 ```
-$ docker run -v /some/haproxy.cfg:/etc/haproxy/haproxy.cfg:ro dil001/haproxy:0.3
+$ docker run -v /some/haproxy.cfg:/etc/haproxy/haproxy.cfg:ro dil001/haproxy:0.5
 ```
 
 *Creating a pod*
