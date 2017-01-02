@@ -1,4 +1,3 @@
-This is a arm64 port of the gcr.io/google_containers/haproxy image.
 
 HAProxy 1.6 base image using ubuntu-slim
 
@@ -10,7 +9,7 @@ This image does provides a default configuration file with no backend servers.
 
 *Using docker*
 ```
-$ docker run -v /some/haproxy.cfg:/etc/haproxy/haproxy.cfg:ro dil001/haproxy:0.5
+$ docker run -v /some/haproxy.cfg:/etc/haproxy/haproxy.cfg:ro gcr.io/google_containers/haproxy:0.5
 ```
 
 *Creating a pod*
