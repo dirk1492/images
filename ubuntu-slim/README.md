@@ -1,9 +1,9 @@
 
-Small Ubuntu 15.10 docker image
+Small Ubuntu 16.04 docker image
 
 This is a arm64 port of the gcr.io/google_containers/ubuntu-slim image.
 
-The size of this image is less than 56MB (more than half of ubuntu:15.10). 
+The size of this image is ~47MB (less than half than `ubuntu:16.04).
 This is possible by the removal of packages that are not required in a container:
 - dmsetup
 - e2fsprogs

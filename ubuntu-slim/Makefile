@@ -1,12 +1,12 @@
 all: push
 
-# 0.0 shouldn't clobber any release builds, current "latest" is 0.1
-TAG = 0.1
-PREFIX = dil001/ubuntu-slim-arm64
-BUILD_IMAGE = ubuntu-build
-TAR_FILE = rootfs.tar
+TAG ?= 0.3
+PREFIX ?= dil001/ubuntu-slim-arm64
+BUILD_IMAGE ?= ubuntu-build
+TAR_FILE ?= rootfs.tar
 
 container:
+	rm -f $(TAR_FILE)
 	docker build -t $(BUILD_IMAGE) -f Dockerfile.build .
 	docker create --name $(BUILD_IMAGE) $(BUILD_IMAGE)
 	docker export $(BUILD_IMAGE) > $(TAR_FILE)
@@ -19,4 +19,4 @@ push: container
 clean:
 	docker rmi -f $(PREFIX):$(TAG)
 	docker rmi -f $(BUILD_IMAGE)
-	rm $(TAR_FILE)
+	rm -f $(TAR_FILE)
