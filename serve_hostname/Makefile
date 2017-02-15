@@ -8,12 +8,15 @@ serve_hostname: serve_hostname.go
 
 container: serve_hostname
 	docker build -t $(PREFIX)/serve_hostname-arm64:$(TAG) .
+	docker tag $(PREFIX)/serve_hostname-arm64:$(TAG) $(PREFIX)/serve_hostname-arm64
 	if [ -n "$(TEST_PREFIX)" ]; then \
 	    docker tag -f $(PREFIX)/serve_hostname-arm64:$(TAG) $(TEST_PREFIX)/serve_hostname:$(TAG); \
 	fi
 
 push:
 	docker push $(PREFIX)/serve_hostname-arm64:$(TAG)
+	docker push $(PREFIX)/serve_hostname-arm64
+
 	if [ -n "$(TEST_PREFIX)" ]; then \
 	    docker push $(TEST_PREFIX)/serve_hostname-arm64:$(TAG); \
 	fi
