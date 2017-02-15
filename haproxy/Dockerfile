@@ -13,7 +13,7 @@
 # limitations under the License.
 
 
-FROM dil001/ubuntu-slimi-arm64:0.3
+FROM dil001/ubuntu-slim-arm64:0.5
 #MAINTAINER Prashanth B <beeps@google.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
